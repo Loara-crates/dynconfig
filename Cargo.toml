@@ -1,0 +1,16 @@
+[package]
+name = "dynconfig"
+version = "0.1.0"
+edition = "2021"
+description = "Configuration file parser through Wasm-WASI plugins"
+license = "GPL-3.0-or-later"
+keywords = ["wasm", "wasi", "parser", "scanner"]
+categories = ["parsing"]
+homepage = "https://github.com/Loara-crates/dynconfig"
+repository = "https://github.com/Loara-crates/dynconfig"
+readme = "README.md"
+include = ["wit/world.wit"]
+
+[dependencies]
+wasmtime = {version = "24", features = ["component-model"]}
+directories = {version = "5"}
