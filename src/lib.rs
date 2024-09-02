@@ -36,7 +36,28 @@
 //! - MacOS: `${HOME}/Library/Application Support/org.loara.dyparser/plugins/default.wasm`.
 //!
 //! ## WIT file
-#![doc = include_str!("../wit/world.wit")]
+//! ```
+//! package loara:dyparser@0.1.0;
+//! 
+//! interface types {
+//!     resource section {
+//!         constructor();
+//!         add-field : func(key : string, val : string);
+//!         add-section : func(name : string, sec : section);
+//!     }
+//!     next : func() -> option<char>;
+//! }
+//! 
+//! interface parser {
+//!     use types.{section};
+//!     parse-stream : func() -> section;
+//! }
+//! 
+//! world dyparser {
+//!     import types;
+//!     export parser;
+//! }
+//! ```
 
 extern crate wasmtime;
 extern crate directories;
